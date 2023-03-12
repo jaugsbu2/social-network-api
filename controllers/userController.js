@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const {User, Thought} = require("../models");
 
 module.exports = {
   getUsers(req, res) {
@@ -40,27 +40,26 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-  // deleteUser(req, res) {
-  //   User.findOneAndRemove({ _id: req.params.userId })
-  //     .then((user) => {
-  //       console.log(user);
-  //       if (!user) {
-  //         res.status(404).json({ message: "No user with this id!" });
-  //       } else {
-  //         if (user.thoughts.length != []) {
-  //           Thought.deleteMany({ username: user.username });
-  //         }
-  //       }
-  //     })
-  //     .then((user) =>
-  //       !user
-  //         ? res
-  //             .status(404)
-  //             .json({ message: "User deleted but no thoughts deleted for this user!" })
-  //         : res.json({ message: "Thought successfully deleted!" })
-  //     )
-  //     .catch((err) => res.status(500).json(err));
-  // },
+  
+  deleteUser(req, res) {
+    User.findOneAndRemove({ _id: req.params.userId })
+      .then((user) => 
+      !user
+      ? res
+          .status(404)
+          .json({ message: "No user with this id to make a friend!" })
+      : Thought.deleteMany(
+          {username: user.username },
+        ))
+      .then((user) =>
+        !user
+          ? res
+              .status(404)
+              .json({ message: "User deleted but no thoughts deleted for this user!" })
+          : res.json({ message: "User and Thoughts successfully deleted!" })
+      )
+      .catch((err) => res.status(500).json(err));
+  },
 
   // Add a thought reaction
   addFriend(req, res) {

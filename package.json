@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "start": "node index",
-    "seed": "node utils/seed.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {

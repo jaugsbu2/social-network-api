@@ -29,4 +29,11 @@ const reactionSchema = new Schema(
   }
 );
 
+reactionSchema
+.virtual('formattedDate')
+.get(function () {
+  var date = this.createdAt
+  return date.toString()
+});
+
 module.exports = reactionSchema;

@@ -34,6 +34,12 @@ thoughtSchema
   .get(function () {
     return this.reactions.length;
   });
+  thoughtSchema
+  .virtual('formattedDate')
+  .get(function () {
+    var date = this.createdAt
+    return date.toString()
+  });
 
 
 const Thought = model('thought', thoughtSchema);

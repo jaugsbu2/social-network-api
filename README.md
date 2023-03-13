@@ -17,9 +17,9 @@
   
   ## Installation
   
-  In the integrated terminal run the sequence of comamands to start the application:
-  npm i
-  npm start
+  In the integrated terminal run the sequence of comamands to start the application:<br><br>
+  npm i<br>
+  npm start<br><br>
 
   Open insomnia and test the routes shown below.
   

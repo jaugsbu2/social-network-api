@@ -1,4 +1,4 @@
-![license badge](/public/images/license-MIT-License-yellow.svg)
+![license badge](/images/license-MIT-License-yellow.svg)
 
   # Simple Blog
 
@@ -39,7 +39,7 @@ Delete - Delete a thought by id<br>
 Post - Add a reaction to a thought by the thought id<br>
 Delete - Remove a reaction to a thought by thought id and reaction id<br><br>
 
-A link to a video showing these routes in use is here: (https://watch.screencastify.com/v/UfYZYsPmFCLTEALLuMXM)
+A link to a video showing these routes in use is here: https://watch.screencastify.com/v/UfYZYsPmFCLTEALLuMXM
   
   ## License
 
